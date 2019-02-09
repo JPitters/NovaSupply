@@ -1,0 +1,24 @@
+.btn-primary{
+    float: right;
+    margin-right: 35%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+}
+
+.btn-success{
+    float: left;
+    margin-left: 35%;
+}
+
+#accountText{
+    padding-inline-start: 2%;
+    
+
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.425);
+  }

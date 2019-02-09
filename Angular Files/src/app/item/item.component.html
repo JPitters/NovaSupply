@@ -1,0 +1,48 @@
+<main class="container">
+  
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column" style="margin-right: 40px;">
+    <!-- <img data-image="black" src="images/black.png" alt="">
+    <img data-image="blue" src="images/blue.png" alt=""> -->
+    <img data-image="red" class="active" src="{{pURL}}" height="150%" alt="">
+  </div>
+ 
+ 
+  <!-- Right Column -->
+  <div class="right-column">
+ 
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>NovaSupply</span>
+      <h1>{{pName}}</h1>
+      <p>{{pDetails}}</p>
+    </div>
+ 
+    <!-- Product Configuration -->
+    <div class="product-configuration">
+      <!-- Product Color -->
+      <div class="product-color">
+
+       <select name="Sizes" #t (change)="currentI(t.value)">
+          <option *ngFor="let Size of pSize; let i = index" value= {{i}}>{{Size}}</option>
+       </select>
+       <span>Stock: {{pStock[t.value]}}</span>
+      </div>
+ 
+      <!-- Cable Configuration -->
+      <div>
+          <input type="number" min=1 max=5 maxlength=1 [(ngModel)]="quant" name="quant" value= {{quant}}>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span id="currency-default">{{pPrice | currency:"CAD$"}}</span>
+      <div *ngIf="authService.isUserEmailLoggedIn">
+      <a class="cart-btn" (click)="addToCart()" routerLink="/cart">Add to cart</a>
+      </div>
+    </div>
+  </div>
+</main>

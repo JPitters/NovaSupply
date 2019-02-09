@@ -1,0 +1,209 @@
+<div *ngIf="authService.currentUser">		
+		<div align="center">		
+			
+			<br>
+			<h4>
+				<div *ngIf="authService.currentUserId=='Hlitcw8qjbh4twsqxdkjTKGlfvH3'"><strong>Welcome, Admin!</strong></div>
+				<div *ngIf="authService.currentUserId!='Hlitcw8qjbh4twsqxdkjTKGlfvH3'"><strong>Welcome, {{authService.currentUserName}}</strong></div>
+			</h4>
+			<br>
+		</div>
+
+		<div class="container">
+			<div class="jumbotron">
+			<div *ngIf="authService.currentUserId=='Hlitcw8qjbh4twsqxdkjTKGlfvH3'"><h3 id="accountText">Administrator Account</h3></div>
+			
+					<div class="container">
+							<hr>
+							<button data-toggle="collapse" data-target="#demo1" class="btn btn-info" (click)="getUserInfo()">Edit Name</button> 
+							 <div id="demo1" class="collapse"> 
+									<div class="form-group">
+											
+										<br>
+											<div class="row">
+												<div class="col">
+													<label for="firstName">First Name</label>
+													<input type="firstName" class="form-control" id="firstName" placeholder="{{firstname_}}" name="firstName" required [(ngModel)]="firstname_">
+												</div>
+												<div class="col">
+													<label for="lastName">Last Name</label>
+													<input type="lastName" class="form-control" id="lastName"  placeholder="{{lastname_}}" name="lastName" required [(ngModel)]="lastname_">
+												</div>
+											</div>
+											<br>
+											<button type="submit" class="btn btn-success"  (click)="addUser()">Save Changes</button>
+										</div>
+							</div>
+							
+							<br>
+							<hr>
+						
+							<button data-toggle="collapse" data-target="#demo" class="btn btn-info" (click)="getUserInfo()">Edit Shipping</button>
+						
+							<div id="demo" class="collapse">
+							<form (ngSubmit)="editUser()">
+							<div class="form-group">
+								<br>
+								<label for="lcountry">Country:</label><br>
+								<select class="form-control" id="country" [(ngModel)]="country_" name="Country">
+									<option value="" disabled selected>{{country_}}</option>
+									<option>Canada</option>
+									<option>America</option>
+									<option>Sri Lanka</option>
+									<option>Bulgaria</option>
+									<option>Narnia</option>
+								</select>
+							</div>
+							
+							<div class="form-group">
+								<label for="saddress">Street Address:</label>
+								<input type="text" class="form-control" id="addr" name="addr" placeholder="{{address_}}" [(ngModel)]="address_">
+							</div>
+							
+							<div class="form-group">
+								<label for="city">City:</label>
+								<input type="text" class="form-control" id="city" name="city" placeholder="{{city_}}" [(ngModel)]="city_">
+							</div>
+							
+							<div class="form-group">
+								<label for="pt">Province/Territory:</label>
+								<input type="text" class="form-control" id="pt" name="pt" placeholder="{{province_}}" [(ngModel)]="province_">
+							</div>
+							
+							<div class="form-group">
+								<label for="pc">Postal Code:</label>
+								<input type="text" class="form-control" id="pcode" name="pcode" placeholder="{{postalcode_}}" [(ngModel)]="postalcode_">
+							</div>
+							
+							<div class="form-group">
+								<label for="pn">Phone Number:</label>
+								<input type="text" class="form-control" id="pnumber" name="pnumber" placeholder="{{phone_}}" [(ngModel)]="phone_">
+							</div>
+							
+							<button type="submit" class="btn btn-success" (click)="addUser()">Save Changes</button>
+							<br>
+							
+							</form>
+							</div>
+						
+
+						<br>
+						<hr>
+						
+
+
+						<button data-toggle="collapse" data-target="#demo2" class="btn btn-info" (click)="getUserInfo()">Edit Billing</button>
+						
+							<div id="demo2" class="collapse">
+							<form>
+							<div class="form-group">
+								<br>
+								<label for="lcountry">Country:</label><br>
+								<select class="form-control" id="bcountry" [(ngModel)]="bcountry_" name="bCountry">
+									<option value="" disabled selected>{{bcountry_}}</option>
+									<option>Canada</option>
+									<option>America</option>
+									<option>Sri Lanka</option>
+									<option>Bulgaria</option>
+									<option>Narnia</option>
+								</select>
+							</div>
+							
+							<div class="form-group">
+								<label for="saddress">Street Address:</label>
+								<input type="text" class="form-control" id="addr" name="baddr" placeholder="{{baddress_}}" [(ngModel)]="baddress_">
+							</div>
+							
+							<div class="form-group">
+								<label for="city">City:</label>
+								<input type="text" class="form-control" id="city" name="bcity" placeholder="{{bcity_}}" [(ngModel)]="bcity_">
+							</div>
+							
+							<div class="form-group">
+								<label for="pt">Province/Territory:</label>
+								<input type="text" class="form-control" id="pt" name="bpt" placeholder="{{bprovince_}}" [(ngModel)]="bprovince_">
+							</div>
+							
+							<div class="form-group">
+								<label for="pc">Postal Code:</label>
+								<input type="text" class="form-control" id="pcode" name="bpcode" placeholder="{{bpostalcode_}}" [(ngModel)]="bpostalcode_">
+							</div>
+							
+							<div class="form-group">
+								<label for="pn">Phone Number:</label>
+								<input type="text" class="form-control" id="pnumber" name="bpnumber" placeholder="{{bphone_}}" [(ngModel)]="bphone_">
+							</div>
+							
+							<button type="submit" class="btn btn-success" (click)="addUser()">Save Changes</button>
+							
+							</form>
+							</div>
+
+
+							<br>
+							<hr>
+
+							<div *ngIf="authService.currentUserId=='Hlitcw8qjbh4twsqxdkjTKGlfvH3'">
+							<button data-toggle="collapse" data-target="#demo4" class="btn btn-danger" (click)="showUsers()">View Users</button>
+						
+							<div id="demo4" class="collapse">
+							<form>
+								show users here
+
+							</form>
+							</div>
+
+							<br>
+							<hr>
+
+							<div *ngIf="authService.currentUserId=='Hlitcw8qjbh4twsqxdkjTKGlfvH3'"></div>
+							<button data-toggle="collapse" data-target="#demo5" class="btn btn-danger" (click)="getOrders()">View Orders</button>
+						
+							<div id="demo5" class="collapse">
+							<form>
+								
+								<div *ngFor="let ord of orders; let i = index" >
+									<div class="media">
+										<div class="media-body">
+										<hr>
+										  <h5 class="mt-0">User</h5>
+											<!--{{orderUser[i].FirstName}}-->
+											{{this.orders[i].uid}}
+											<h5 class="mt-0">Status</h5>
+											{{ord.Status}}
+
+											<h4>Purchase list</h4>
+										  <div *ngFor="let x of ord.OItems">
+											  <br>
+										  <div class="media mt-3">
+											<a class="pr-3" href="#">
+											  <img src="{{x.URL}}" alt="Generic placeholder image" style="width:175px;height:175px;">
+											</a>
+											<div class="media-body">
+											  <h5 class="mt-0">Item Name</h5>
+											  {{x.Name}}
+											  <h5 class="mt-0">Item Size</h5>
+											  {{x.Size}}
+											  <h5 class="mt-0">Item Amount</h5>
+											  {{x.Quantity}}
+											  <h5 class="mt-0">Item Price</h5>
+											  {{x.Price}}
+											  
+											  </div>
+											  <hr>
+										  </div>
+										</div>
+									  </div>
+									</div>
+								
+								</div>
+
+							</form>
+							</div>
+
+							</div>
+
+						<button class="btn btn-primary" (click)="logout()" >Logout</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,134 @@
+<div class="container">
+  <div class="jumbotron">
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label>Item name</label>
+            <input type="text" class="form-control" [(ngModel)]="Name" name="Name" placeholder="Enter item name">
+          </div>
+          <div class="col">
+            <label>Price</label>
+            <input type="number" class="form-control" [(ngModel)]="Price" name="Price" placeholder="Enter price">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label>Item Collection </label><select name="Collection" #t (change)="currentI(t.value)">
+          <option *ngFor="let Coll of cis; let i = index" value= {{i}}>{{Coll}}</option>
+       </select>
+      </div>
+   
+      <div class="form-group">
+        <label>Details</label>
+        <input type="text" class="form-control" [(ngModel)]="Details" name="Details" placeholder="Enter item details">
+      </div>
+      
+      <hr class="my-4">
+      <div class="form-group">
+        <label>Fabric</label>
+        <input type="text" class="form-control" [(ngModel)]="Fabric" name="Fabric" placeholder="Enter fabric type">
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label>Description</label>
+            <input type="text" class="form-control" [(ngModel)]="Description" name="Description"  placeholder="Enter item Description">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+              <label>Sizes</label>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="small" [(ngModel)]="small_" name="small"> Small</label>
+                  <input type="number" class="form-control" [(ngModel)]="qsmall" name="small"  placeholder="Enter quantity of item in Small">
+                </div>
+                <br>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="medium" [(ngModel)]="medium_" name="medium"> Medium</label>
+                  <input type="number" class="form-control" [(ngModel)]="qmedium" name="medium"  placeholder="Enter quantity of item in Medium">
+                </div>
+                <br>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="large" [(ngModel)]="large_" name="large"> Large</label>
+                  <input type="number" class="form-control" [(ngModel)]="qlarge" name="large"  placeholder="Enter quantity of item in Large">
+                </div>
+                <br>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="xlarge" [(ngModel)]="xlarge_" name="xlarge"> XL</label>
+                  <input type="number" class="form-control" [(ngModel)]="qxlarge" name="xlarge"  placeholder="Enter quantity of item in XL">
+                </div>
+                <br>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="xxlarge" [(ngModel)]="xxlarge_" name="xxlarge"> XXL</label>
+                  <input type="number" class="form-control" [(ngModel)]="qxxlarge" name="xxlarge"  placeholder="Enter quantity of item in XXL">
+                </div>
+                <br>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="osfa" [(ngModel)]="osfm_" name="osfm"> OSFM</label>
+                  <input type="number" class="form-control" [(ngModel)]="qosfm" name="osfm"  placeholder="Enter quantity of item in One Size Fits Most">
+                </div>
+          </div>  
+          <br>
+        </div>
+      </div>
+
+    <div class="dropzone" 
+     dropZone
+     (hovered)="toggleHover($event)"
+     (dropped)="startUpload($event)"
+     [class.hovering]="isHovering">
+
+     <h3>Drag and drop an image to upload! </h3>
+
+     <div class="file">
+        <label class="file-label">
+
+        <input class="file-input" type="file" (change)="startUpload($event.target.files)">
+
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fa fa-upload"></i>
+            </span>
+            <span class="file-label">
+              or choose a file…
+            </span>
+          </span>
+        </label>
+      </div>
+    </div>
+    <div *ngIf="percentage | async as pct">
+
+        <progress class="progress is-info" 
+                  [value]="pct" 
+                  max="100">        
+        </progress>
+      
+        {{ pct | number }}%
+      
+      </div>
+      
+      <div *ngIf="snapshot | async as snap">
+        {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }} 
+      
+        <div *ngIf="downloadURL | async as url">
+          <h3>File has been successfully added!</h3>
+          <!-- <a [href]="url" target="_blank" rel="noopener" [(ngModel)]="URL = url" name="URL">{{url}}}</a>  -->
+          <img width="200px" height="200px" src={{url}}>
+          <!-- <input type="text" [(ngModel)]="URL" name="URL" value="url"> -->
+        </div>
+      
+        <!-- <button (click)="task.pause()" class="button is-warning" [disabled]="!isActive(snap)">Pause</button>
+        <button (click)="task.cancel()" class="button is-danger" [disabled]="!isActive(snap)">Cancel</button>
+        <button (click)="task.resume()" class="button is-info"   [disabled]="!(snap?.state === 'paused')">Resume</button> -->
+      
+      </div>
+      <br>
+      <button type="button" class="btn btn-primary"  align="center" (click)="addItem()" [routerLink]="['/shop']">Add</button>
+     
+    </form>
+    
+  </div>
+</div>

@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";   
+
+body {
+    background-image: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100%;
+    background-position: center;
+    repeat: no;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.fa-twitter, .fa-instagram, .fa-tumblr{
+    color: black
+}
+
+.bottom-bar{
+    position: fixed;
+    bottom: 0; 
+    text-align: center;
+    width: 100%;
+}
+
+.centered-logo{
+    position: absolute;
+}
+
+
+.nav-item > a {
+    position: relative;
+    text-decoration: none;
+}
+.nav-item > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0) scaleY(0);
+    transform: scaleX(0) scaleY(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+.nav-item > a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1)  scaleY(1);
+    transform: scaleX(1)  scaleY(1);
+}

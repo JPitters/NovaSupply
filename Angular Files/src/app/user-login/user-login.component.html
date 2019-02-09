@@ -1,0 +1,171 @@
+<div class="container">
+	<div class="jumbotron">
+
+		{{checkUserInfo()}}
+		<div *ngIf="!authService.isUserEmailLoggedIn">
+			<div style="width: 400px;" *ngIf="!isNewUser">
+
+				<p *ngIf="errorMessage.length > 0" class="text-danger">
+					{{errorMessage}}</p>
+
+				<p *ngIf="error.message.length > 0" class="text-danger">
+					{{error.message}}</p>
+
+				<form (ngSubmit)="onSignUp()">
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col">
+								<label for="firstName">First Name</label>
+								<input type="firstName" class="form-control" id="firstName" name="firstName" required [(ngModel)]="firstName">
+							</div>
+							<div class="col">
+								<label for="lastName">Last Name</label>
+								<input type="lastName" class="form-control" id="lastName" name="lastName" required [(ngModel)]="lastName">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" id="email" name="email" required [(ngModel)]="email">
+					</div>
+
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" id="pw1" name="pw1" required [(ngModel)]="password" ng-required>
+					</div>
+
+					<div class="form-group">
+						<label for="password">Re-enter your password</label>
+						<input type="password" class="form-control" id="pw2" name="pw2" required [(ngModel)]="password" ng-required pw-check='pw1'>
+					</div>
+							
+						<div class="form-group">
+							<label for="addressLine">Street Address:</label><br>
+							<input type="text" class="form-control" id="addressLine" name="addressLine" placeholder="41 The Pond Rd" required [(ngModel)]="addressLine"><br>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col">
+									<label for="lcountry">Country:</label>
+									<select class="form-control" id="country" name="country" [(ngModel)]="country">
+										<option>Canada</option>
+										<option>America</option>
+										<option>Sri Lanka</option>
+										<option>Bulgaria</option>
+										<option>Narnia</option>
+									</select>
+								</div>
+							
+								<div class="col">
+									<label for="city">City:</label><br>
+									<input type="text" class="form-control" id="city" name="city" placeholder="City" required [(ngModel)]="city">
+								</div>
+							</div>
+						</div>
+			
+						<div class="form-group">
+							<div class="row">
+								<div class="col">
+									<label for="pt">Province/Territory:</label><br>
+									<input type="text" class="form-control" id="pt" name="pt" placeholder="Province" required [(ngModel)]="province">
+								</div>
+								<div class="col">
+									<label for="pc">Postal Code:</label><br>
+									<input type="text" class="form-control" id="pcode" name="pcode" placeholder="A1A 1A1" required [(ngModel)]="postalCode">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="pn">Phone Number:</label><br>
+							<input type="text" class="form-control" id="pnumber" name="pnumber" placeholder="xxx-xxx-xxxx" [(ngModel)]="phoneNumber">
+						</div>
+						<br>
+						<h4>Billing Address</h4>
+
+						<form>
+								
+								
+								<div class="form-group">
+									<label for="saddress">Street Address:</label>
+									<input type="text" class="form-control"  name="baddr" placeholder="41 The Pond Rd" [(ngModel)]="baddress_">
+								</div>
+								
+								<div class="form-group">
+										<div class="row">
+											<div class="col">
+												<label for="lcountry">Country:</label>
+												<select class="form-control" id="country" name="country" [(ngModel)]="bcountry_">
+													<option>Canada</option>
+													<option>America</option>
+													<option>Sri Lanka</option>
+													<option>Bulgaria</option>
+													<option>Narnia</option>
+												</select>
+											</div>
+										
+											<div class="col">
+												<label for="city">City:</label><br>
+												<input type="text" class="form-control" id="city" name="city" placeholder="City" required [(ngModel)]="bcity_">
+											</div>
+										</div>
+									</div>
+								
+								<div class="form-group">
+										<div class="row">
+											<div class="col">
+												<label for="pt">Province/Territory:</label><br>
+												<input type="text" class="form-control" id="pt" name="bpt" placeholder="Province" required [(ngModel)]="bprovince_">
+											</div>
+											<div class="col">
+												<label for="pc">Postal Code:</label><br>
+												<input type="text" class="form-control" id="pcode" name="bpcode" placeholder="A1A 1A1" required [(ngModel)]="bpostalcode_">
+											</div>
+										</div>
+									</div>
+								
+								<div class="form-group">
+									<label for="pn">Phone Number:</label>
+									<input type="text" class="form-control"  name="bpnumber" placeholder="xxx-xxx-xxxx" [(ngModel)]="bphone_">
+								</div>
+								 
+								</form>
+
+					<button type="submit" class="btn btn-success" >Register</button>
+				</form>
+				<br>
+				<h6 class="text-primary" (click)="changeForm()">Already have an account? <b><u>Login</u></b></h6>
+			</div>
+
+			<div style="width: 350px;" *ngIf="isNewUser">
+
+				<p *ngIf="errorMessage.length > 0" class="text-danger">
+					{{errorMessage}}</p>
+
+				<p *ngIf="error.message.length > 0" class="text-danger">
+					{{error.message}}</p>
+
+				<form (ngSubmit)="onLoginEmail()">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="text" class="form-control" id="email" name="email" required [(ngModel)]="email">
+					</div>
+
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" id="password" name="password" required [(ngModel)]="password">
+					</div>
+
+					<button type="submit" class="btn btn-success" href="/shop">Log In</button>
+				</form>
+				<br>
+				<h6 class="text-primary"  (click)="changeForm()">Dont't have an account? <b><u>Register</u></b></h6>
+				<br> 
+				<button *ngIf="!resetPassword && isValidMailFormat(email)" class="btn btn-warning" (click)="sendResetEmail()">Reset Password</button>
+				<p *ngIf="resetPassword && isValidMailFormat(email)" class="text-success">Check your email to reset password!</p>
+
+			</div>
+		</div>

@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="jumbotron">
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label>Item name</label>
+            <input type="text" class="form-control" [(ngModel)]="Name" name="Name" placeholder="Enter item name">
+          </div>
+          <div class="col">
+            <label>Price</label>
+            <input type="number" class="form-control" [(ngModel)]="Price" name="Price" placeholder="Enter price">
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Details</label>
+        <input type="text" class="form-control" [(ngModel)]="Details" name="Details" placeholder="Enter item details">
+      </div>
+      
+      <hr class="my-4">
+      <div class="form-group">
+        <label>Fabric</label>
+        <input type="text" class="form-control" [(ngModel)]="Fabric" name="Fabric" placeholder="Enter fabric type">
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label>Information</label>
+            <input type="text" class="form-control" [(ngModel)]="Information" name="Information"  placeholder="Enter item information">
+          </div>
+          <div class="col">
+            <label>Sizes</label>
+            <input type="text" class="form-control" [(ngModel)]="Sizes" name="Sizes"  placeholder="Enter sizes of item!" >
+          </div>
+          <div class="col">
+              <label>Stock</label>
+              <input type="text" class="form-control" [(ngModel)]="Stock" name="Stock"  placeholder="Enter stock of item in same order as size" >
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label>Image URL</label>
+          <input type="text" class="form-control" [(ngModel)]="URL" name="URL" placeholder="Enter the image url to reference">
+        </div>
+
+
+      <div class="form-group">
+          <label class="upload-group">Upload item picture 
+            <input type="file" class="upload-group" id="file">
+          </label>
+          <button type="btn btn-primary" onclick="uploadFile()">Upload picture</button>
+      </div>
+
+      <button type="submit" class="btn btn-primary"  align="center" value="Add an Item"  (click)="addItem()">Add</button>
+      <button type="submit" class="btn btn-primary"  align="center" value="Delete an Item"  (click)="deleteItem(Clothes.id)">Delete</button>
+   
+    </form>
+    
+  </div>
+</div>
