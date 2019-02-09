@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  <meta charset="UTF-8">
+  <title>NovaSupply</title>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+
+  <script>
+   // Initialize Firebase
+   var config = {
+      apiKey: "AIzaSyBypZG_J-z7jUcPuPJ_fg7jmc5eaAmIuR8",
+      authDomain: "novaclay-fd588.firebaseapp.com",
+      databaseURL: "https://novaclay-fd588.firebaseio.com",
+      projectId: "novaclay-fd588",
+      storageBucket: "novaclay-fd588.appspot.com",
+      messagingSenderId: "752023226129"
+      };
+      
+      firebase.initializeApp(config);
+  </script>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	
+	<!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	
+	<style>
+		body {
+			background-image: no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: 100%;
+			background-position: center;
+			repeat: no;
+		}
+		
+		.fa-twitter, .fa-instagram, .fa-tumblr{
+			color: black
+		}
+		
+		.bottom-bar{
+			align: right;
+		}
+		
+	</style>
+  </head>
+	
+	
+	<body background="http://novasupply.co/wp-content/uploads/2015/10/dsc_8790.jpg">
+		
+
+		<nav class="navbar navbar-expand-md navbar-light">
+			<a class="navbar-brand" href="index.html"> 
+				<img src="http://novasupply.co/wp-content/uploads/2015/10/BUDa0C5O2lkQowVDaNiURRzalv9L8AjATeaxdhTMKxg-2.jpg" class="img-thumbnail" width="70" height="70" alt="">
+			</a>
+		  
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbar" aria-controls="home-navbar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  
+
+		  <div class="collapse navbar-collapse" id="home-navbar">
+			
+		  
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" >
+					<a class="nav-link" href="#"><b>Home</b><span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"><b>Shop</b></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Cart</a>
+				</li>
+				<!--li>
+					<a href="https://twitter.com/NovaSupply" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+				
+					<a href="http://novasupply.tumblr.com" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-tumblr fa-fw"></i> <span class="network-name">Tumblr</span></a>
+				
+					<a href="https://www.instagram.com/novasupply/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+				</li-->
+			</ul>
+			
+			
+			<form class="form-inline">
+			  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+			  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+			
+		  </div>
+		</nav>
+		
+		<!---section id="contact" class="container content-section text-center">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<ul class="list-inline banner-social-buttons">
+						<li>
+							<a href="https://twitter.com/NovaSupply" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+						</li>
+						<li>
+							<a href="http://novasupply.tumblr.com" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-tumblr fa-fw"></i> <span class="network-name">Tumblr</span></a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/novasupply/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+						</li> 
+					</ul>
+				</div>
+				<br>
+				
+			</div>
+		</section -->
+		
+		
+		<div class="bottom-bar">
+			<ul class="list-inline banner-social-buttons">
+						<li>
+							<a href="https://twitter.com/NovaSupply" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+						
+							<a href="http://novasupply.tumblr.com" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-tumblr fa-fw"></i> <span class="network-name">Tumblr</span></a>
+						
+							<a href="https://www.instagram.com/novasupply/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+						</li> 
+			</ul>
+		</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </body>
+</html>
